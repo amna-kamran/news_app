@@ -42,8 +42,15 @@ class NewsContainer extends StatelessWidget {
             ],
           ),
           Spaces.h20,
-          Image.network(imgURL),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(15.0),
+            child: Image.network(
+              imgURL,
+            ),
+          ),
+          Spaces.h15,
           Text(newsBody),
+          Spacer(),
           ElevatedButton(
             onPressed: () {},
             child: Text("Read More"),
