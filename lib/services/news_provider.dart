@@ -1,15 +1,19 @@
 //https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=7673b72b5f884a87a39b1e6296506152
 import 'dart:convert';
-
-import 'package:flutter/material.dart';
+import 'dart:math';
 import 'package:http/http.dart';
+import 'package:news_app/model/news.dart';
 
 class NewsProvider {
-  static fetchNews() async {
+  static Future<News> fetchNews() async {
     final String uri =
         "https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=7673b72b5f884a87a39b1e6296506152";
     Response response = await get(Uri.parse(uri));
     Map data = jsonDecode(response.body);
-    debugPrint(data.toString());
+    List articles = data["articles"];
+    final newRandom = Random();
+    var article = articles[newRandom.nextInt(9)];
+    News news = News.fromMap(article);
+    return news;
   }
 }
