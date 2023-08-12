@@ -16,7 +16,7 @@ class _BreakingNewsCardState extends State<BreakingNewsCard> {
         color: Colors.black,
         borderRadius: BorderRadius.circular(30),
         image: DecorationImage(
-          fit: BoxFit.contain,
+          fit: BoxFit.cover,
           image: NetworkImage(widget.news.imgURL),
         ),
       ),
@@ -27,6 +27,28 @@ class _BreakingNewsCardState extends State<BreakingNewsCard> {
             Colors.transparent,
             Colors.black,
           ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+        ),
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              widget.news.newsTitle,
+              style: const TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+            Text(
+              widget.news.publishedBy,
+              style: const TextStyle(
+                fontSize: 15,
+                color: Colors.grey,
+              ),
+            )
+          ],
         ),
       ),
     );

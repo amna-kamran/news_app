@@ -14,7 +14,7 @@ class BreakingNewsCarousal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List>(
-      future: NewsProvider.fetchBreakingNews(),
+      future: BreakingNewsProvider.fetchBreakingNews(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const CircularProgressIndicator();
