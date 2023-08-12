@@ -1,35 +1,27 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:news_app/constants/spaces.dart';
+import 'package:news_app/model/news.dart';
 
 class NewsContainer extends StatelessWidget {
-  final String imgURL;
-  final String newsTitle;
-  final String newsBody;
-  final String datePublished;
-  final String publishedBy;
+  final News news;
   const NewsContainer({
     Key? key,
-    required this.imgURL,
-    required this.newsTitle,
-    required this.newsBody,
-    required this.datePublished,
-    required this.publishedBy,
+    required this.news,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(20),
-      height: MediaQuery.of(context).size.height,
-      width: MediaQuery.of(context).size.width,
+      padding: const EdgeInsets.all(20),
+      height: double.infinity,
+      width: double.infinity,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Spaces.h80,
           Text(
-            newsTitle,
-            style: TextStyle(
+            news.newsTitle,
+            style: const TextStyle(
               fontSize: 40,
               fontWeight: FontWeight.bold,
             ),
@@ -37,23 +29,23 @@ class NewsContainer extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(datePublished),
-              Text(publishedBy),
+              Text(news.datePublished),
+              Text(news.publishedBy),
             ],
           ),
           Spaces.h20,
           ClipRRect(
             borderRadius: BorderRadius.circular(15.0),
             child: Image.network(
-              imgURL,
+              news.imgURL,
             ),
           ),
           Spaces.h15,
-          Text(newsBody),
-          Spacer(),
+          Text(news.newsBody),
+          const Spacer(),
           ElevatedButton(
             onPressed: () {},
-            child: Text("Read More"),
+            child: const Text("Read More"),
           ),
         ],
       ),
