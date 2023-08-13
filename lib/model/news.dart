@@ -42,9 +42,9 @@ class News {
 
   factory News.fromMap(Map<String, dynamic> map) {
     return News(
-      imgURL: map['urlToImage'] ?? "image not found",
+      imgURL: map['urlToImage'] ?? "",
       newsTitle: map['title'] ?? "--",
-      newsBody: map['content'] ?? "--",
+      newsBody: map['content'] ?? "",
       datePublished: map['publishedAt'] ?? "--",
       publishedBy: map['author'] ?? "--",
     );
