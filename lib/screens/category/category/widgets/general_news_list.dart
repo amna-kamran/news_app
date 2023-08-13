@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/core/news_tile.dart';
 
-class TopNewsList extends StatefulWidget {
-  const TopNewsList({super.key, required this.news});
+class GeneralNewsList extends StatefulWidget {
+  const GeneralNewsList({super.key, required this.news});
   final Future<List<dynamic>> news;
   @override
-  State<TopNewsList> createState() => _TopNewsListState();
+  State<GeneralNewsList> createState() => _GeneralNewsListState();
 }
 
-class _TopNewsListState extends State<TopNewsList> {
+class _GeneralNewsListState extends State<GeneralNewsList> {
   @override
   Widget build(BuildContext context) {
     return Column(

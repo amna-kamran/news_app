@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:news_app/constants/spaces.dart';
 import 'package:news_app/model/news.dart';
 
-class TopNewsTile extends StatelessWidget {
-  const TopNewsTile({super.key, required this.news});
+class NewsTile extends StatelessWidget {
+  const NewsTile({super.key, required this.news});
   final News news;
   @override
   Widget build(BuildContext context) {

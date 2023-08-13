@@ -3,7 +3,6 @@ import 'package:intl/intl.dart';
 import 'package:news_app/constants/spaces.dart';
 import 'package:news_app/screens/home/widget/breaking_news_carousal.dart';
 import 'package:news_app/screens/home/widget/top_news_list.dart';
-import 'package:news_app/screens/home/widget/top_news_tile.dart';
 import 'package:news_app/services/news_provider.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -17,11 +16,11 @@ class _HomeScreenState extends State<HomeScreen> {
   final date = DateTime.now();
 
   Future<List> getBreakingNews() async {
-    return await BreakingNewsProvider.fetchBreakingNews();
+    return await NewsProvider.fetchBreakingNews();
   }
 
   Future<List> getTopNews() async {
-    return await BreakingNewsProvider.fetchTopNews();
+    return await NewsProvider.fetchTopNews();
   }
 
   @override

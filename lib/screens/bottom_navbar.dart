@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:news_app/constants/spaces.dart';
-import 'package:news_app/screens/category/category_screen.dart';
+import 'package:news_app/screens/category/category/category_screen.dart';
 import 'package:news_app/screens/home/home.dart';
 
 class BottomNavBar extends StatefulWidget {
