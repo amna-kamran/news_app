@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/screens/category/category/widgets/category_screens/1.dart';
-import 'package:news_app/screens/category/category/widgets/category_screens/2.dart';
-import 'package:news_app/screens/category/category/widgets/category_screens/3.dart';
+
+import 'package:news_app/screens/category/category/widgets/category_screens/entertainment_news_list.dart';
+import 'package:news_app/screens/category/category/widgets/category_screens/business_news_list.dart';
+import 'package:news_app/screens/category/category/widgets/category_screens/technology_news_list.dart';
 
 class CategoryBar extends StatefulWidget {
   const CategoryBar({super.key});
@@ -17,9 +18,9 @@ class _CategoryBarState extends State<CategoryBar> {
     "Business",
   ];
   static const List<Widget> views = [
-    HealthNewsScreen(),
-    PoliticsNewsScreen(),
-    ArtNewsScreen(),
+    GeneralNewsList(),
+    EntertainmentNewsList(),
+    BusinessNewsList(),
   ];
   int currentIndex = 0;
 
