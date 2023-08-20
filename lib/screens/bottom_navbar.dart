@@ -69,7 +69,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 entry.value,
                 color: currentIndex == entry.key
                     ? Colors.black
-                    : Color.fromARGB(255, 126, 126, 126),
+                    : const Color.fromARGB(255, 126, 126, 126),
               ),
             ))
         .toList();

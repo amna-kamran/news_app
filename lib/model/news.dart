@@ -16,10 +16,10 @@ class News {
 
   News copyWith({
     String? imgURL,
-    String? newsTitle,
+    final newsTitle,
     String? newsBody,
-    String? datePublished,
-    String? publishedBy,
+    final datePublished,
+    final publishedBy,
   }) {
     return News(
       imgURL: imgURL ?? this.imgURL,

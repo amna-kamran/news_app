@@ -3,7 +3,6 @@ import 'package:intl/intl.dart';
 import 'package:news_app/constants/spaces.dart';
 import 'package:news_app/screens/home/widget/breaking_news_carousal.dart';
 import 'package:news_app/screens/home/widget/top_news_list.dart';
-import 'package:news_app/services/news_provider.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -15,19 +14,9 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   final date = DateTime.now();
 
-  Future<List> getBreakingNews() async {
-    return await NewsProvider.fetchBreakingNews();
-  }
-
-  Future<List> getTopNews() async {
-    return await NewsProvider.fetchTopNews();
-  }
-
   @override
   void initState() {
     super.initState();
-    getBreakingNews();
-    getTopNews();
   }
 
   @override
@@ -51,9 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   style: TextStyle(fontSize: 40, fontWeight: FontWeight.w500),
                 ),
                 Spaces.h15,
-                BreakingNewsCarousal(
-                  news: getBreakingNews(),
-                ),
+                BreakingNewsCarousal(),
                 Spaces.h15,
                 const Row(
                   children: [
@@ -70,9 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
                 Spaces.h15,
-                TopNewsList(
-                  news: getTopNews(),
-                ),
+                const TopNewsList(),
               ],
             ),
           ),
