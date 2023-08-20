@@ -40,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   style: TextStyle(fontSize: 40, fontWeight: FontWeight.w500),
                 ),
                 Spaces.h15,
-                BreakingNewsCarousal(),
+                const BreakingNewsCarousal(),
                 Spaces.h15,
                 const Row(
                   children: [

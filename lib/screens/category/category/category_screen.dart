@@ -22,13 +22,13 @@ class _CategoryScreenState extends State<CategoryScreen> {
               "Discover",
               style: TextStyle(
                   fontSize: 50,
-                  color: Colors.black,
+                  color: Colors.white,
                   fontWeight: FontWeight.bold),
             ),
             Text(
               "News from all over the world.",
               style: TextStyle(
-                color: Colors.black38,
+                color: Colors.white,
               ),
             ),
             CategoryBar(),

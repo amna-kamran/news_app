@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/screens/bottom_navbar.dart';
+import 'package:news_app/screens/floating_bar.dart';
 import 'package:news_app/services/news_provider.dart';
 import 'package:provider/provider.dart';
 

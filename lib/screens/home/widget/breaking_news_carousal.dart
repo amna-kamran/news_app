@@ -7,7 +7,7 @@ import 'package:news_app/services/urls.dart';
 import 'package:provider/provider.dart';
 
 class BreakingNewsCarousal extends StatefulWidget {
-  BreakingNewsCarousal({
+  const BreakingNewsCarousal({
     super.key,
   });
 
