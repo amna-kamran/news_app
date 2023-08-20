@@ -18,7 +18,7 @@ class MainApp extends StatelessWidget {
         title: 'News App',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(brightness: Brightness.dark),
-        home: const BottomNavBar(),
+        home: const FloatingBar(),
       ),
     );
   }

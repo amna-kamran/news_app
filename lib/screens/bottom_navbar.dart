@@ -4,14 +4,14 @@ import 'package:news_app/constants/spaces.dart';
 import 'package:news_app/screens/category/category/category_screen.dart';
 import 'package:news_app/screens/home/home.dart';
 
-class BottomNavBar extends StatefulWidget {
-  const BottomNavBar({super.key});
+class FloatingBar extends StatefulWidget {
+  const FloatingBar({super.key});
 
   @override
-  State<BottomNavBar> createState() => _BottomNavBarState();
+  State<FloatingBar> createState() => _FloatingBarState();
 }
 
-class _BottomNavBarState extends State<BottomNavBar> {
+class _FloatingBarState extends State<FloatingBar> {
   final List<Widget> views = [
     const HomeScreen(),
     const CategoryScreen(),
