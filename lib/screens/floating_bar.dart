@@ -36,17 +36,29 @@ class _FloatingBarState extends State<FloatingBar> {
               left: 50,
               right: 50,
               child: Container(
+                padding: const EdgeInsets.all(20.0),
                 height: 65.0,
                 decoration: BoxDecoration(
                   color: Colors.white.withOpacity(0.7),
                   borderRadius: BorderRadius.circular(20.0),
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: generateIconsWithSeparator(icons, Spaces.w30),
-                  ),
+                child: ListView.separated(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: icons.length,
+                  separatorBuilder: (context, index) => Spaces.w30,
+                  itemBuilder: (context, index) {
+                    return GestureDetector(
+                      onTap: () => setState(() {
+                        currentIndex = index;
+                      }),
+                      child: SvgPicture.asset(
+                        icons[index],
+                        color: currentIndex == index
+                            ? Colors.black
+                            : const Color.fromARGB(255, 126, 126, 126),
+                      ),
+                    );
+                  },
                 ),
               ),
             ),
@@ -54,28 +66,5 @@ class _FloatingBarState extends State<FloatingBar> {
         ),
       ),
     );
-  }
-
-  List<Widget> generateIconsWithSeparator(
-      List<String> icons, Widget separator) {
-    List<Widget> iconWidgets = icons
-        .asMap()
-        .entries
-        .map((entry) => GestureDetector(
-              onTap: () => setState(() {
-                currentIndex = entry.key;
-              }),
-              child: SvgPicture.asset(
-                entry.value,
-                color: currentIndex == entry.key
-                    ? Colors.black
-                    : const Color.fromARGB(255, 126, 126, 126),
-              ),
-            ))
-        .toList();
-    List<Widget> widgetsWithSeparator =
-        iconWidgets.expand((widget) => [widget, separator]).toList();
-    widgetsWithSeparator.removeLast();
-    return widgetsWithSeparator;
   }
 }
