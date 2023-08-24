@@ -6,10 +6,10 @@ import 'package:news_app/services/news_provider.dart';
 import 'package:provider/provider.dart';
 
 class NewsList extends StatefulWidget {
-  final url;
-  const NewsList({
+  List<News>? news;
+  NewsList({
     super.key,
-    required this.url,
+    required this.news,
   });
 
   @override
@@ -18,12 +18,6 @@ class NewsList extends StatefulWidget {
 
 class _NewsListState extends State<NewsList> {
   @override
-  void initState() {
-    super.initState();
-    final newsProvider = Provider.of<NewsProvider>(context);
-    newsProvider.fetchNews(widget.url);
-  }
-
   @override
   Widget build(BuildContext context) {
     final newsProvider = Provider.of<NewsProvider>(context);

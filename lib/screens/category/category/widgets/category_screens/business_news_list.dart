@@ -1,44 +1,32 @@
 import 'package:flutter/material.dart';
-
-import 'package:news_app/core/news_tile.dart';
+import 'package:news_app/constants/urls.dart';
+import 'package:news_app/core/news_list.dart';
 import 'package:news_app/model/news.dart';
 import 'package:news_app/services/news_provider.dart';
-import 'package:news_app/services/urls.dart';
 import 'package:provider/provider.dart';
 
-class BusinessNewsList extends StatefulWidget {
-  const BusinessNewsList({
-    super.key,
-  });
+class BusinessNews extends StatefulWidget {
+  const BusinessNews({super.key});
 
   @override
-  State<BusinessNewsList> createState() => _BusinessNewsListState();
+  State<BusinessNews> createState() => _BusinessNewsState();
 }
 
-class _BusinessNewsListState extends State<BusinessNewsList> {
+class _BusinessNewsState extends State<BusinessNews> {
   @override
   void initState() {
     super.initState();
-    Provider.of<NewsProvider>(context, listen: false)
-        .fetchNews(URL.businessNews);
+    Provider.of<NewsProvider>(context, listen: false).fetchNews(
+      URL.getURL("business"),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     final newsProvider = Provider.of<NewsProvider>(context);
-    List<News>? businessNews = newsProvider.newsArticleList;
-
-    return Container(
-      padding: const EdgeInsets.only(bottom: 20),
-      margin: const EdgeInsets.only(top: 10),
-      height: 621,
-      child: SingleChildScrollView(
-        child: Column(
-          children: businessNews != null
-              ? businessNews.map((e) => NewsTile(news: e)).toList()
-              : [const CircularProgressIndicator()],
-        ),
-      ),
+    List<News>? news = newsProvider.newsArticleList;
+    return NewsList(
+      news: news,
     );
   }
 }

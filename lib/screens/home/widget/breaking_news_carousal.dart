@@ -19,15 +19,14 @@ class _BreakingNewsCarousalState extends State<BreakingNewsCarousal> {
   @override
   void initState() {
     super.initState();
-    final newsProvider = Provider.of<NewsProvider>(context);
-    newsProvider.fetchNews(URL.breakingNews);
+    Provider.of<NewsProvider>(context, listen: false)
+        .fetchNews(URL.breakingNews);
   }
 
   @override
   Widget build(BuildContext context) {
     final newsProvider = Provider.of<NewsProvider>(context);
     List<News>? breakingNews = newsProvider.newsArticleList;
-
     return CarouselSlider.builder(
       itemCount: breakingNews?.length ?? 0,
       itemBuilder: (context, index, id) {

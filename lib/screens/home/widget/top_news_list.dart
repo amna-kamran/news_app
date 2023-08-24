@@ -18,13 +18,15 @@ class _TopNewsListState extends State<TopNewsList> {
   @override
   void initState() {
     super.initState();
-    final newsProvider = Provider.of<NewsProvider>(context);
-    newsProvider.fetchNews(URL.topNews);
+    Provider.of<NewsProvider>(context, listen: false).fetchNews(
+      URL.getURL("general"),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     final newsProvider = Provider.of<NewsProvider>(context);
+
     List<News>? topNews = newsProvider.newsArticleList;
 
     return Column(

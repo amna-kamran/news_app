@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../../constants/urls.dart';
-import '../../../../core/news_list.dart';
+import 'category_screens/business_news_list.dart';
+import 'category_screens/entertainment_news_list.dart';
+import 'category_screens/technology_news_list.dart';
 
 class CategoryBar extends StatefulWidget {
   const CategoryBar({super.key});
@@ -11,16 +12,14 @@ class CategoryBar extends StatefulWidget {
 
 class _CategoryBarState extends State<CategoryBar> {
   static const List<String> titles = [
-    "General",
+    "Technology",
     "Entertainment",
     "Business",
   ];
-  static const List<Widget> views = [
-    NewsList(url: URL.technologyNews),
-    NewsList(url: URL.entertainmentNews),
-    NewsList(
-      url: URL.businessNews,
-    ),
+  static List<Widget> views = [
+    const TechnologyNews(),
+    const EntertainmentNews(),
+    const BusinessNews(),
   ];
   int currentIndex = 0;
 
