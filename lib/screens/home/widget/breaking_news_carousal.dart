@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:news_app/model/news.dart';
 import 'package:news_app/screens/home/widget/breaking_news_card.dart';
 import 'package:news_app/services/news_provider.dart';
-import 'package:news_app/services/urls.dart';
+import 'package:news_app/constants/urls.dart';
 import 'package:provider/provider.dart';
 
 class BreakingNewsCarousal extends StatefulWidget {
@@ -19,8 +19,8 @@ class _BreakingNewsCarousalState extends State<BreakingNewsCarousal> {
   @override
   void initState() {
     super.initState();
-    Provider.of<NewsProvider>(context, listen: false)
-        .fetchNews(URL.breakingNews);
+    final newsProvider = Provider.of<NewsProvider>(context);
+    newsProvider.fetchNews(URL.breakingNews);
   }
 
   @override
