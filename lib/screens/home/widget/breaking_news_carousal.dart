@@ -28,9 +28,9 @@ class _BreakingNewsCarousalState extends State<BreakingNewsCarousal> {
     final newsProvider = Provider.of<NewsProvider>(context);
     List<News>? breakingNews = newsProvider.newsArticleList;
     return CarouselSlider.builder(
-      itemCount: breakingNews?.length ?? 0,
+      itemCount: breakingNews.length,
       itemBuilder: (context, index, id) {
-        return BreakingNewsCard(news: breakingNews![index]);
+        return BreakingNewsCard(news: breakingNews[index]);
       },
       options: CarouselOptions(
         aspectRatio: 16 / 11,

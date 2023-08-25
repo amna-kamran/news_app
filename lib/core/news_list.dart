@@ -6,8 +6,8 @@ import 'package:news_app/services/news_provider.dart';
 import 'package:provider/provider.dart';
 
 class NewsList extends StatefulWidget {
-  List<News>? news;
-  NewsList({
+  final List<News>? news;
+  const NewsList({
     super.key,
     required this.news,
   });
@@ -26,12 +26,10 @@ class _NewsListState extends State<NewsList> {
     return Container(
       padding: const EdgeInsets.only(bottom: 20),
       margin: const EdgeInsets.only(top: 10),
-      height: 621,
+      height: 1000,
       child: SingleChildScrollView(
         child: Column(
-          children: news != null
-              ? news.map((e) => NewsTile(news: e)).toList()
-              : [const CircularProgressIndicator()],
+          children: news.map((e) => NewsTile(news: e)).toList(),
         ),
       ),
     );
