@@ -26,7 +26,7 @@ class _NewsListState extends State<NewsList> {
     return Container(
       padding: const EdgeInsets.only(bottom: 20),
       margin: const EdgeInsets.only(top: 10),
-      height: 621,
+      height: 1000,
       child: SingleChildScrollView(
         child: Column(
           children: news != null
