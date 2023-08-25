@@ -53,10 +53,14 @@ class _CategoryBarState extends State<CategoryBar> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 for (final e in titles)
-                  Taptab(
-                    name: e,
-                    isSelected: titles.indexOf(e) == appState.selectedTabIndex,
-                    index: titles.indexOf(e),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 1),
+                    child: Taptab(
+                      name: e,
+                      isSelected:
+                          titles.indexOf(e) == appState.selectedTabIndex,
+                      index: titles.indexOf(e),
+                    ),
                   ),
               ],
             ),
