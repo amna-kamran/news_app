@@ -20,19 +20,19 @@ class Taptab extends StatelessWidget {
       },
       child: Container(
         height: 50,
-        width: 110,
+        width: 118,
         decoration: BoxDecoration(
           color: isSelected
-              ? const Color.fromARGB(255, 186, 82, 8)
+              ? const Color.fromARGB(255, 122, 172, 212)
               : const Color.fromARGB(255, 109, 105, 81),
-          borderRadius: BorderRadius.circular(15),
+          borderRadius: BorderRadius.circular(20),
           border: Border.all(color: Colors.black),
         ),
         child: Center(
           child: Text(
             name,
             style: const TextStyle(
-                color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+                color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
           ),
         ),
       ),

@@ -30,9 +30,7 @@ class _TopNewsListState extends State<TopNewsList> {
     List<News>? topNews = newsProvider.newsArticleList;
 
     return Column(
-      children: topNews != null
-          ? topNews.map((e) => NewsTile(news: e)).toList()
-          : [const CircularProgressIndicator()],
+      children: topNews.map((e) => NewsTile(news: e)).toList(),
     );
   }
 }
