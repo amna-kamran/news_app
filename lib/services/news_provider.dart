@@ -10,7 +10,7 @@ class NewsProvider with ChangeNotifier {
   static NewsProvider s(BuildContext context) =>
       Provider.of<NewsProvider>(context, listen: true);
 
-  List<News>? newsArticleList;
+  List<News> newsArticleList = [];
   Future<void> fetchNews(String uri) async {
     try {
       Response response = await get(Uri.parse(uri));
